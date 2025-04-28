@@ -42,7 +42,7 @@ const operationOptions: OperationOption[] = [
 // OpenRouter API URL
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 // 需要在实际使用时替换为你的API密钥
-const API_KEY = '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';
+const API_KEY = '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';
 
 const AIAssistant = ({ selectedText = '', position, onReplace, onClose }: AIAssistantProps) => {
   // 状态变量
@@ -134,7 +134,8 @@ const AIAssistant = ({ selectedText = '', position, onReplace, onClose }: AIAssi
         },
         body: JSON.stringify({
           // model: 'anthropic/claude-3-haiku', // 使用Claude 3 Haiku，速度快且价格合理
-          model: "mistralai/mistral-7b-instruct:free", // 使用Claude 3 Haiku，速度快且价格合理
+          // model: "mistralai/mistral-7b-instruct:free", // 使用Claude 3 Haiku，速度快且价格合理
+          model: "deepseek/deepseek-chat-v3-0324:free", // 使用Claude 3 Haiku，速度快且价格合理
           messages: [
             {
               role: 'user',
