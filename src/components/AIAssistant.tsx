@@ -129,9 +129,8 @@ const AIAssistant = ({ selectedText = '', position, onReplace, onClose }: AIAssi
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`,
-          'HTTP-Referer': window.location.origin, // OpenRouter需要的引用站点
+          'Content-Type': ' /json',
+          'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
           // model: 'anthropic/claude-3-haiku', // 使用Claude 3 Haiku，速度快且价格合理
