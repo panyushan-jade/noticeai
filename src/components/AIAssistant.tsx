@@ -42,7 +42,7 @@ const operationOptions: OperationOption[] = [
 // OpenRouter API URL
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 // 需要在实际使用时替换为你的API密钥
-const API_KEY = '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';
+const API_KEY = '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';
 
 const AIAssistant = ({ selectedText = '', position, onReplace, onClose }: AIAssistantProps) => {
   // 状态变量
