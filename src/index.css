@@ -1,0 +1,335 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Editor specific styles */
+.editor-container {
+  width: 80%;
+  height: 100%;
+  margin: 20px auto;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.editor {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  outline: none;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: white;
+  color: #333;
+  word-break: break-word;
+  text-align: left;
+}
+
+/* AI Assistant UI */
+.assistant-container {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  z-index: 1000;
+  color: #333;
+}
+
+.assistant-header {
+  width: 500px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.04), 0px 24px 50px  rgba(0, 0, 0, 0.16); 
+}
+
+.assistant-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.assistant-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.assistant-menu {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.menu-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.menu-option:last-child {
+  border-bottom: none;
+}
+
+.menu-option:hover {
+  background-color: #e0e0e0;
+}
+
+.assistant-content {
+  padding: 0;
+  position: absolute;
+}
+
+.assistant-input {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  /* padding: 10px; */
+  /* border-top: 1px solid #e0e0e0; */
+  /* background-color: #f9f9f9; */
+}
+
+.assistant-input input {
+  flex: 1;
+  padding: 10px;
+  border: unset;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.assistant-input input:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+.assistant-input input:disabled {
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: default;
+}
+
+.assistant-input input:read-only {
+  background-color: #f0f9ff;
+  border-color: #4f46e5;
+  color: #333;
+  cursor: default;
+  font-size: 14px;
+  line-height: 1.5;
+  height: auto;
+  min-height: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.assistant-input button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistant-input button:hover {
+  background-color: #4338ca;
+}
+
+.ai-response {
+  margin: 0;
+  padding: 15px;
+  background-color: #f0f9ff;
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ai-response-container {
+  padding: 0;
+}
+
+.response-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+.response-actions.single-button {
+  justify-content: center;
+}
+
+.response-actions button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* Model selection styles */
+.model-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.model-option {
+  padding: 6px 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.model-option:hover {
+  background-color: #e8e8e8;
+}
+
+.model-option.selected {
+  background-color: #f5f5f5;
+  color: rgba(51, 51, 51, 1);
+  /* border-color:  rgba(51, 51, 51, 1); */
+}
+
+/* 操作选项样式 */
+.operation-options {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+  text-align: left;
+  box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.04), 0px 24px 50px  rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  /* border-top: 1px solid #e0e0e0; */
+}
+
+.operation-option,.operation-option-title {
+  text-align: left;
+  width: 100%;
+  padding: 6px 10px;
+  background-color: white;
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+.operation-option:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.operation-option.selected {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(51, 51, 51, 1);
+  /* border-color: #4338ca; */
+}
+
+.processing-indicator {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+mark,.selected-text {
+  background-color: #d8e4fe;
+  color: rgba(96, 96, 96, 1);
+}
+::selection {
+  background-color: #d8e4fe;
+  color: rgba(96, 96, 96, 1);
+}
